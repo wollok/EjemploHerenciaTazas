@@ -94,3 +94,18 @@ class Vaso inherits Recipiente{
 	}
 }
 
+const miTazaConDibujitos = new Taza(temperatura = 20)
+
+object tazaVader inherits Taza(temperatura = 60,capacidad = 300) {
+	var dibujo = "soy tu padre"
+	
+	override method vaciar() {
+		super()
+		if (self.esDivertida()) 
+		  dibujo = "otro"
+	}
+	method esDivertida() {
+		return dibujo.algo()
+	}
+}
+

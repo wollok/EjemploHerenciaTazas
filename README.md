@@ -247,7 +247,7 @@ object tazaVader inherits Taza(temperatura = 60,capacidad = 300) {
 }
 ```
 
-![](diagramaRedefinicion.png)
+![](DiagramaRedefinicion.png)
 
 ### ¿Otros recipientes?  (Clase abstracta)
 En este contexto, tiene sentido preguntarse si hay otros recipientes además de tazas, vasos, mates y la taza vader. En caso afirmativo, si no hay nada en particular en ellos que implique la definición de nuevas entidades, podrían ser simplemente instancias de la clase Recipiente y no habría que modificar el código en absoluto.

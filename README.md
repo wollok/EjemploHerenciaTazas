@@ -161,8 +161,6 @@ class Vaso inherits Recipiente{
 }
 ```
 
-![](diagramaHerencia.png)
-
 ### ¡A tomar unos mates! (Más Herencia)
 
 Surgen nuevos elementos a representar. Se trata de algo que contiene líquido y se toma de él. Cuando se quiere tomar y no hay líquido, debe controlarlo. Nos interesa representar su temperatura y sabemos que se enfría con el paso del tiempo.
@@ -190,6 +188,8 @@ class Mate inherits Taza{
   }
 }
 ```
+
+![](diagramaHerencia.png)
 
 ### Diferentes formas de llenarse (Redefinición)
 Ahora, las tazas se consideran llenas cuando están hasta a 10 unidades de su capacidad máxima.

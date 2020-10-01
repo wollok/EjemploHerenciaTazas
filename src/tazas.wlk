@@ -2,7 +2,7 @@ class Recipiente{
 	const capacidad = 250
 	var cantidad = 0
 
-	method estaLlena() {
+	method estaLleno() {
 	 	return cantidad >= capacidad
 	}
 	 
@@ -12,7 +12,7 @@ class Recipiente{
 	
 	method tomar(){
 	 	if(cantidad <= 0) {
-	 		throw new Exception(message= "El recipiente esta vacía")
+	 		throw new Exception(message= "No hay suficiente líquido para tomar")
 	 	}
 	 	cantidad -= 10
 	 	cantidad = cantidad.max(0)
@@ -20,7 +20,7 @@ class Recipiente{
 	
 	method realizarMerienda(){
 		
-		if(!self.estaLlena())
+		if(!self.estaLleno())
 			self.agregar(250)
 		5.times{x=>self.tomar()}
 		self.vaciar()
@@ -42,7 +42,7 @@ class Taza inherits Recipiente{
 	method temperatura() = temperatura
 		
 	override 
-	method estaLlena(){
+	method estaLleno(){
 		return cantidad > capacidad - 10
 	}
 	
@@ -68,14 +68,14 @@ class Mate inherits Taza{
 		//......
 	}
 	
-	override method estaLlena(){
+	override method estaLleno(){
 		return false
 	}
 }
 
 
 class Vaso inherits Recipiente{
-	var material
+    const material = "vidrio"  //Salvo que se indique lo contrario al instanciar, los vasos son de vidrio 
 			
 	method esFragil(){
 		return material == "vidrio"
@@ -94,18 +94,18 @@ class Vaso inherits Recipiente{
 	}
 }
 
-const miTazaConDibujitos = new Taza(temperatura = 20)
+object tazaVader inherits Taza(temperatura = 60,capacidad = 300) { 
+  var property dibujo = "soy tu padre"
+  
+  method esDivertida() {
+    return dibujo.contains("padre")
+  }
 
-object tazaVader inherits Taza(temperatura = 60,capacidad = 300) {
-	var dibujo = "soy tu padre"
-	
 	override method vaciar() {
-		super()
-		if (self.esDivertida()) 
-		  dibujo = "otro"
+		// podría hacer super() y algo más 
 	}
-	method esDivertida() {
-		return dibujo.algo()
-	}
+	
 }
 
+
+const miTazaConDibujitos = new Taza(temperatura = 20)

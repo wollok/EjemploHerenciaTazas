@@ -1,8 +1,10 @@
 # Sobre tazas y otros recipientes
 
-**Ejemplo para introducir Herencia**
+**Ejemplo para explicar Herencia**
 
-### Algo que contiene bebidas calientes (clase)
+![](taza.jpg)
+
+### Algo que contiene bebidas calientes (Clase)
 Queremos representar muchos objetos similares que sirven para contener líquidos calientes, permiten tomar de ellos o agregar más cantidad. Tienen una cierta capacidad maxima, por lo que podemos saber cuándo están llenos.
 También sabemos la temperatura que tiene y a medida que pasa el tiempo su temperatura desciende. 
 A esta abstracción decidimos llamarla **Taza** y definir una clase para representarla. 
@@ -42,7 +44,7 @@ class Taza {
 }
 ```
 
-### Algo para bebidas frías que puede resultar frágil (más clases)
+### Algo para bebidas frías que puede resultar frágil (Más clases)
 Aparecen otros elementos objetos que necesitamos modelar, que también permiten contener líquidos, poder ir agregrando y tomando de ellos, y saber si están llenos teniendo como referencia una capacidad máxima para cada uno.
 Como se usan para líquidos fríos no nos interesa representar su temperatura, pero sí es importante conocer de que material están hechos, porque si son de vidrio resultan frágiles y se pueden caer perdiendo todo su contenido.
 
@@ -291,3 +293,7 @@ class Recipiente {
   method vaciar() // Método abstracto
 }
 ```
+
+### Diagrama estático
+
+![](diagrama.png)
